@@ -1,0 +1,28 @@
+UP	Means			DOWN
+
+F1	Start
+F2	Pause
+F3	To Origin
+F4	CarvingPreview
+F5	Move
+  01	  Up
+  02	  Down
+  03	  Left
+  04	  Right
+
+F6	??? (Send to Setup)	ep	
+F7	Reverse
+	02 Y
+F9	Restart			y
+
+01-F0	Burning Time
+
+
+Image Send:
+
+FEx8
+(Pausa 3 secondi)
+32830 byte di immagine
+
+64 byte per pacchetto Separatore  (0F) FF FF
+1 bit bitmap
