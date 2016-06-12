@@ -1,10 +1,20 @@
 #!/bin/bash
 
-if [ "$#" -ne 2 ]; then
+if [ "$#" -lt 2 ]; then
     echo "Usage:"
-    echo " nejePrint SERIALDEVICE IMAGE"
+    echo " nejePrint SERIALDEVICE IMAGE [BURNINGTIME]"
     exit
 fi
+
+if [ "$#" -eq 3 ]; then
+   btime=`echo "obase=16; $3" | bc`
+else
+   btime=20
+fi
+
+#echo $btime
+#echo -e "\x$btime"
+
 
 actualsize=$(wc -c <"$2")
 
@@ -34,7 +44,11 @@ sleep 1
 
 echo home
 echo -e '\xF3' > $1
-sleep 10
+sleep 5
+
+echo Burning Time 0x$btime
+echo -e '\x$btime' > $1
+sleep 1
 
 echo preview
 echo -e '\xF4' > $1
