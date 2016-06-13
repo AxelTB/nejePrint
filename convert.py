@@ -19,8 +19,8 @@ if rep == b'ep' :
 
 	im = Image.open(file_path)
 
-	im = im.resize((512,512), Image.ANTIALIAS)
-	im = im.convert('1')
+	im = im.resize((512,512), Image.NEAREST)
+	im = im.convert('1').transpose(Image.FLIP_TOP_BOTTOM)
 
 
 	im.save('converted.bmp')
