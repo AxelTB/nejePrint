@@ -16,6 +16,8 @@ Image must be 520x520 BMP 1 bit color depth (See mono.bmp)
 # python3 Neje Printer
 Python 3 based Neje Printer script.
 
+If the printer is running just pause before running the script.
+
 Does:
 * Image Conversion (Not square images will be stretched)
 * Image Load

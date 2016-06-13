@@ -1,6 +1,4 @@
 from PIL import Image
-import tkinter as tk
-from tkinter import filedialog
 
 import serial
 import time
@@ -18,9 +16,7 @@ if rep == b'ep' :
 		reply = choicebox("What would you like to do?", choices=choices)
 
 		if reply == choices[0] :
-			root = tk.Tk()
-			root.withdraw()
-			#file_path = filedialog.askopenfilename()
+
 			file_path = fileopenbox()
 			im = Image.open(file_path)
 
@@ -46,9 +42,11 @@ if rep == b'ep' :
 		elif reply == choices[3]:
 			ser.write(b"\xF1")
 		elif reply == choices[4]:
-			burnTime=int(input("Enter burning time (1-240) : "))
+			#burnTime=int(input("Enter burning time (1-240) : "))
+			burnTime=integerbox(msg='Enter Burning time', title='Set Burning Time', default=20, lowerbound=1, upperbound=240)
 		#ser.write(b"\x10")
-			ser.write(bytes([burnTime]))
+			if burnTime != None :
+				ser.write(bytes([burnTime]))
 		elif reply == choices[5]:
 			ser.write(b"\xF3")
 		elif reply == choices[6]:
