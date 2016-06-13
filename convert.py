@@ -12,7 +12,7 @@ rep=ser.read(2);
 print('Replied')
 print(rep)
 
-if rep == 'ep' :
+if rep == b'ep' :
 	root = tk.Tk()
 	root.withdraw()
 	file_path = filedialog.askopenfilename()
@@ -29,13 +29,13 @@ if rep == 'ep' :
 	time.sleep(3)
 	ser.write(open("converted.bmp","rb").read())
 	time.sleep(3)
-	
+
 	ser.write(b"\xF3")
 	time.sleep(5)
-	
+
 	ser.write(b"\x10")
 	time.sleep(1)
-	
+
 	ser.write(b"\xF4")
-	
-	
+else :
+	print('Printer not connected')
