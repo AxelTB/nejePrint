@@ -10,7 +10,7 @@ F5	Move
   03	  Left
   04	  Right
 
-F6	??? (Send to Setup)	ep	
+F6	??? (Send to Setup)	ep
 F7	Reverse
 	02 Y
 F9	Restart			y
@@ -22,7 +22,4 @@ Image Send:
 
 FEx8
 (Pausa 3 secondi)
-32830 byte di immagine
-
-64 byte per pacchetto Separatore  (0F) FF FF
-1 bit bitmap
+32830 byte di immagine 512x512 1 bit bitmap
