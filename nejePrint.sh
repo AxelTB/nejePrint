@@ -2,7 +2,7 @@
 
 if [ "$#" -lt 2 ]; then
     echo "Usage:"
-    echo " nejePrint SERIALDEVICE IMAGE [BURNINGTIME]"
+    echo " nejePrint.sh SERIALDEVICE IMAGE [BURNINGTIME]"
     exit
 fi
 
