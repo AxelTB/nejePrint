@@ -34,6 +34,9 @@ Does not:
 
 Requires:
 * Python3
-* Python3 tk
 * Pyserial
 * Python EasyGUI
+
+
+More detailed instructions:
+http://axengineering.wordpress.com/2016/06/14/neje-laser-engraver-on-linux/
