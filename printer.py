@@ -4,7 +4,14 @@ import serial
 import time
 from easygui import *
 
-ser = serial.Serial('/dev/ttyUSB0', 57600)
+import glob,os
+os.chdir("/dev")
+choices=[]
+for file in glob.glob("ttyUSB*"):
+	choices.append(file)
+chosenSerial = choicebox("Which serial?", choices=choices)
+
+ser = serial.Serial(chosenSerial, 57600)
 ser.write(b"\xF6")
 rep=ser.read(2);
 
