@@ -9,7 +9,7 @@ Linux script for Neje Laser engraver
 Usage:
 nejePrint.sh SERIALDEVICE IMAGE [BURNINGTIME]
 
-Image must be 520x520 BMP 1 bit color depth (See mono.bmp)
+Image must be 512x512 BMP 1 bit color depth (See mono.bmp)
 
 
 
