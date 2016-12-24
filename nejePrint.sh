@@ -23,7 +23,6 @@ if [ $actualsize -ne 32830 ]; then
    exit
 fi
 
-
 echo setting port...
 stty 57600 min 1 line 0 time 0 -brkint -icrnl ixoff -imaxbel -opost -onlcr -opost -onlcr -isig -icanon -echo -echoe  < $1
 sleep 1
@@ -33,6 +32,7 @@ echo a > ./rep.tmp
 echo Handshake...
  #read -n 2 rep < $1 & echo -e '\xF6' > $1
 dd of=rep.tmp if=$1 bs=2 count=1 status=noxfer &
+sleep 2
 echo -e '\xF6' > $1
 sleep 2
 if [ "`cat ./rep.tmp`" = "ep" ]; then
@@ -52,13 +52,12 @@ sleep 1
 
 echo home
 echo -e '\xF3' > $1
-sleep 5
-
-echo Burning Time 0x$btime
-echo -e '\x$btime' > $1
+sleep 1
 
 read -p "Press Enter to Preview"
 echo -e '\xF4' > $1
 
+#echo -e "Burning Time \x$btime\n"
+#echo -e "\x$btime" > $1
 
 echo "Press Button on the printer to print"
