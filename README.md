@@ -16,8 +16,11 @@ Usage:
 nejePrint.sh SERIALDEVICE IMAGE [BURNINGTIME]
 
 Parameters:
+
   SERIALDEVICE (Usually /dev/ttyUSB0, running dmesg after you connect the printer shuold tell you something more)
+
   IMAGE Image to be printed must be 512x512 BMP 1 bit color depth and vertically flipped (See mono.bmp)
+
   BURNINGTIME 1-240 (Not Implemented)
 
 
@@ -39,7 +42,11 @@ Does not:
 * Printed trace view
 * Manual Control
 
-
+##Install instructions
+```
+sudo apt-get install python3 python3-easygui python3-serial
+python3 printer.py
+```
 
 Requires:
 * Python3
