@@ -4,12 +4,21 @@ commands.txt is kind of a retro-engineering log.
 It seems to just save a bitmap somewhere and then prints it.
 
 # nejePrint
-Linux script for Neje Laser engraver
+Linux script for Neje Laser engraver.
+Use it just to check for compatibility as follow:
+* Connect the printer to the pc
+* Use dmesg to check on which port is the printer (Usually /dev/ttyUSB0)
+* ./nejePrint.sh /dev/ttyUSB0 mono.bmp
+* Press button on printer when program say so
+* If it works you should install the python version
 
 Usage:
 nejePrint.sh SERIALDEVICE IMAGE [BURNINGTIME]
 
-Image must be 512x512 BMP 1 bit color depth (See mono.bmp)
+Parameters:
+  SERIALDEVICE (Usually /dev/ttyUSB0, running dmesg after you connect the printer shuold tell you something more)
+  IMAGE Image to be printed must be 512x512 BMP 1 bit color depth and vertically flipped (See mono.bmp)
+  BURNINGTIME 1-240 (Not Implemented)
 
 
 
