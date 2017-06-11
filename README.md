@@ -1,3 +1,7 @@
+2017-06-11 **__Project discontinued due to machine aviability__ Feel free to fork and edit**
+
+
+
 Since I didn't figure out how to make Neje Software work on wine.
 
 commands.txt is kind of a retro-engineering log.
